@@ -1,6 +1,12 @@
 package migrate
 
-import "github.com/spf13/cobra"
+import (
+	"os"
+
+	"github.com/amirhnajafiz/sql-kafka-debezium/internal/database"
+
+	"github.com/spf13/cobra"
+)
 
 func GetCommand() *cobra.Command {
 	return &cobra.Command{
@@ -12,5 +18,19 @@ func GetCommand() *cobra.Command {
 }
 
 func main() {
+	source := "./internal/database/migrate/migrate.sql"
 
+	data, err := os.ReadFile(source)
+	if err != nil {
+		panic(err)
+	}
+
+	conn, err := database.NewConnection()
+	if err != nil {
+		panic(err)
+	}
+
+	if _, err := conn.Exec(string(data)); err != nil {
+		panic(err)
+	}
 }
