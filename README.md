@@ -72,11 +72,13 @@ Accepts http requests:
     "response": {
       "status code": "200",
       "status message": "OK",
-      "body": {
-        "id": "int",
-        "name": "string",
-        "email": "string"
-      }
+      "body": [
+        {
+            "id": "int",
+            "name": "string",
+            "email": "string"
+        }
+      ]
     }
   }
 ]
