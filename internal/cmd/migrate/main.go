@@ -18,18 +18,22 @@ func GetCommand() *cobra.Command {
 }
 
 func main() {
+	// defining the migration files
 	source := "./internal/database/migrate/migrate.sql"
 
+	// reading query
 	data, err := os.ReadFile(source)
 	if err != nil {
 		panic(err)
 	}
 
+	// opening connection to postgresQL
 	conn, err := database.NewConnection()
 	if err != nil {
 		panic(err)
 	}
 
+	// execute migration query
 	if _, err := conn.Exec(string(data)); err != nil {
 		panic(err)
 	}
