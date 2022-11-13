@@ -9,6 +9,7 @@
     "database.password": "super-secret-password",
     "database.dbname": "henry-db",
     "database.server.name": "postgres",
-    "table.include.list": "public.users"
+    "table.include.list": "public.users",
+    "topic.prefix": "henry"
   }
 }
