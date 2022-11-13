@@ -3,7 +3,7 @@ package migrate
 import (
 	"os"
 
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/database"
+	"github.com/amirhnajafiz/henry/internal/database"
 
 	"github.com/spf13/cobra"
 )

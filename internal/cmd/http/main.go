@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/database"
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/port/http"
+	"github.com/amirhnajafiz/henry/internal/database"
+	"github.com/amirhnajafiz/henry/internal/port/http"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/cobra"

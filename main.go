@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/cmd"
+	"github.com/amirhnajafiz/henry/internal/cmd"
 )
 
 func main() {

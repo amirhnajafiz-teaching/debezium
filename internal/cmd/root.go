@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/cmd/http"
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/cmd/kafka"
-	"github.com/amirhnajafiz/sql-kafka-debezium/internal/cmd/migrate"
+	"github.com/amirhnajafiz/henry/internal/cmd/http"
+	"github.com/amirhnajafiz/henry/internal/cmd/kafka"
+	"github.com/amirhnajafiz/henry/internal/cmd/migrate"
 
 	"github.com/spf13/cobra"
 )
