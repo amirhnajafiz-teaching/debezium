@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	topic     = "sql-kafka"
+	topic     = "henry"
 	partition = 0
 )
 

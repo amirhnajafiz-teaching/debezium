@@ -1,6 +1,12 @@
 package kafka
 
-import "github.com/spf13/cobra"
+import (
+	"context"
+
+	"github.com/amirhnajafiz/sql-kafka-debezium/internal/port/kafka"
+
+	"github.com/spf13/cobra"
+)
 
 func GetCommand() *cobra.Command {
 	return &cobra.Command{
@@ -12,5 +18,17 @@ func GetCommand() *cobra.Command {
 }
 
 func main() {
+	url := "localhost:9092"
+	ctx := context.Background()
 
+	// opening kafka connection
+	conn, err := kafka.OpenConnection(ctx, url)
+	if err != nil {
+		panic(err)
+	}
+
+	// consume over topic
+	if er := kafka.Consume(conn); er != nil {
+		panic(er)
+	}
 }
