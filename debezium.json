@@ -1,0 +1,14 @@
+{
+  "name": "henry-debezium",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "plugin.name": "pgoutput",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "postgres",
+    "database.password": "super-secret-password",
+    "database.dbname": "henry-db",
+    "database.server.name": "postgres",
+    "table.include.list": "public.users"
+  }
+}
