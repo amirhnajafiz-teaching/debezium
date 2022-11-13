@@ -1,4 +1,4 @@
-module github.com/amirhnajafiz/sql-kafka-debezium
+module github.com/amirhnajafiz/henry
 
 go 1.19
 
