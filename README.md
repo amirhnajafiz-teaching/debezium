@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="assets/main.jpeg" alt="logo" />
+</p>
+
 <h1 align="center">
     Henry
 </h1>
@@ -13,7 +17,7 @@ over _Kafka_ message broker.
 First build the _golang_ application:
 
 ```shell
-go build . henry
+go build -o henry
 ```
 
 ```shell
