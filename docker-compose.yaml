@@ -2,10 +2,17 @@ version: "3.9"
 services:
   app:
     build:
-      context: .
+      context: ./app
       dockerfile: Dockerfile
     ports:
       - "7490:7490"
+    networks:
+      - debezium
+
+  connector:
+    build:
+      context: ./connector
+      dockerfile: Dockerfile
     networks:
       - debezium
 
