@@ -1,7 +1,3 @@
-<p align="center">
-    <img src="assets/main.jpeg" alt="logo" />
-</p>
-
 <h1 align="center">
     Henry
 </h1>
