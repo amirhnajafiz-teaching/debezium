@@ -1,4 +1,4 @@
-module github.com/amirhnajafiz/henry
+module github.com/amirhnajafiz/debezium/app
 
 go 1.19
 

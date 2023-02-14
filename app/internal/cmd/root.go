@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/amirhnajafiz/henry/internal/cmd/http"
-	"github.com/amirhnajafiz/henry/internal/cmd/kafka"
-	"github.com/amirhnajafiz/henry/internal/cmd/migrate"
+	"github.com/amirhnajafiz/debezium/app/internal/cmd/http"
+	"github.com/amirhnajafiz/debezium/app/internal/cmd/kafka"
+	"github.com/amirhnajafiz/debezium/app/internal/cmd/migrate"
 
 	"github.com/spf13/cobra"
 )

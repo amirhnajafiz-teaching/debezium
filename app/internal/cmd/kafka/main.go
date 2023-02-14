@@ -3,7 +3,7 @@ package kafka
 import (
 	"context"
 
-	"github.com/amirhnajafiz/henry/internal/port/kafka"
+	"github.com/amirhnajafiz/debezium/app/internal/port/kafka"
 
 	"github.com/spf13/cobra"
 )

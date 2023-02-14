@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/amirhnajafiz/henry/internal/database"
-	"github.com/amirhnajafiz/henry/internal/port/http"
+	"github.com/amirhnajafiz/debezium/app/internal/database"
+	"github.com/amirhnajafiz/debezium/app/internal/port/http"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/cobra"

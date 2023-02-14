@@ -3,7 +3,7 @@ package migrate
 import (
 	"os"
 
-	"github.com/amirhnajafiz/henry/internal/database"
+	"github.com/amirhnajafiz/debezium/app/internal/database"
 
 	"github.com/spf13/cobra"
 )

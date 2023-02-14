@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/amirhnajafiz/henry/internal/cmd"
+	"github.com/amirhnajafiz/debezium/app/internal/cmd"
 )
 
 func main() {
