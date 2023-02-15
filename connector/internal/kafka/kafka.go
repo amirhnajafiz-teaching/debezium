@@ -10,7 +10,7 @@ import (
 )
 
 type Client interface {
-	OpenConnection(url string) error
+	OpenConnection(url, topic string, partition int) error
 	Consume() error
 }
 
@@ -22,10 +22,10 @@ func NewClient() Client {
 	return &client{}
 }
 
-func (c *client) OpenConnection(url string) error {
+func (c *client) OpenConnection(url, topic string, partition int) error {
 	ctx := context.Background()
 
-	conn, err := kafka.DialLeader(ctx, "tcp", url, "", 0)
+	conn, err := kafka.DialLeader(ctx, "tcp", url, topic, partition)
 	if err != nil {
 		return fmt.Errorf("kafka connection failed: %v", err)
 	}
