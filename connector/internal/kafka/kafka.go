@@ -3,6 +3,8 @@ package kafka
 import (
 	"context"
 	"fmt"
+	"log"
+	"time"
 
 	"github.com/segmentio/kafka-go"
 )
@@ -34,5 +36,20 @@ func (c *client) OpenConnection(url string) error {
 }
 
 func (c *client) Consume() error {
-	return nil
+	if err := c.conn.SetReadDeadline(time.Now().Add(10 * time.Second)); err != nil {
+		return fmt.Errorf("set read deadline failed: %v", err)
+	}
+
+	batch := c.conn.ReadBatch(10e3, 1e6) // fetch 10KB min, 1MB max
+
+	bytes := make([]byte, 10e3) // 10KB max per message
+
+	for {
+		n, err := batch.Read(bytes)
+		if err != nil {
+			return fmt.Errorf("read failed: %v", err)
+		}
+
+		log.Println(string(bytes[:n]))
+	}
 }
