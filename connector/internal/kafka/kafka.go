@@ -1,6 +1,9 @@
 package kafka
 
 import (
+	"context"
+	"fmt"
+
 	"github.com/segmentio/kafka-go"
 )
 
@@ -18,6 +21,15 @@ func NewClient() Client {
 }
 
 func (c *client) OpenConnection(url string) error {
+	ctx := context.Background()
+
+	conn, err := kafka.DialLeader(ctx, "tcp", url, "", 0)
+	if err != nil {
+		return fmt.Errorf("kafka connection failed: %v", err)
+	}
+
+	c.conn = conn
+
 	return nil
 }
 
