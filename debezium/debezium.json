@@ -1,5 +1,5 @@
 {
-  "name": "henry-debezium",
+  "name": "users connector",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "plugin.name": "pgoutput",
@@ -7,9 +7,8 @@
     "database.port": "5432",
     "database.user": "postgres",
     "database.password": "super-secret-password",
-    "database.dbname": "henry-db",
+    "database.dbname": "debezium",
     "database.server.name": "postgres",
-    "table.include.list": "public.users",
-    "topic.prefix": "henry"
+    "table.include.list": "debezium.users"
   }
 }

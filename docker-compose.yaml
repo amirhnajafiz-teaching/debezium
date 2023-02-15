@@ -23,7 +23,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=super-secret-password
-      - POSTGRES_DB=henry-db
+      - POSTGRES_DB=debezium
     networks:
       - debezium
 
