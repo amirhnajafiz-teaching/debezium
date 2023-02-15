@@ -10,11 +10,11 @@ import (
 // parameters for connecting
 // to postgresql cluster.
 const (
-	host     = "127.0.0.1"
+	host     = "postgres"
 	port     = 5432
 	user     = "postgres"
 	password = "super-secret-password"
-	dbname   = "henry-db"
+	dbname   = "debezium"
 )
 
 // generateUrl
