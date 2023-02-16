@@ -19,7 +19,7 @@ func main() {
 
 	root.AddCommand(
 		cmd.Migrate{Connection: conn, Source: "./internal/database/migrate/migrate.sql"}.Command(),
-		cmd.HTTP{Connection: conn, Port: 7041}.Command(),
+		cmd.HTTP{Connection: conn, Port: 7490}.Command(),
 	)
 
 	if err := root.Execute(); err != nil {
