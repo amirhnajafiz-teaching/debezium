@@ -1,7 +1,7 @@
 package http
 
 type response struct {
-	id    int    `json:"id"`
-	name  string `json:"name"`
-	email string `json:"email"`
+	ID    int    `json:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email"`
 }

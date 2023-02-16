@@ -23,7 +23,7 @@ func (h *Handler) HandlePostRequests(ctx *fiber.Ctx) error {
 		return ctx.SendStatus(http.StatusBadRequest)
 	}
 
-	if _, err := h.Connection.Query(insertQuery, userReq.name, userReq.email); err != nil {
+	if _, err := h.Connection.Query(insertQuery, userReq.Name, userReq.Email); err != nil {
 		return ctx.SendStatus(http.StatusInternalServerError)
 	}
 
