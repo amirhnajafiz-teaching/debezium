@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/amirhnajafiz/debezium/app/internal/cmd/http"
-	"github.com/amirhnajafiz/debezium/app/internal/cmd/migrate"
+	"github.com/amirhnajafiz/debezium/app/cmd/http"
+	"github.com/amirhnajafiz/debezium/app/cmd/migrate"
 
 	"github.com/spf13/cobra"
 )
