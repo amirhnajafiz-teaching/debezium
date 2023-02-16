@@ -12,15 +12,12 @@ type Migrate struct {
 	Source     string
 }
 
-func (m *Migrate) Command() *cobra.Command {
+func (m Migrate) Command() *cobra.Command {
 	run := func(_ *cobra.Command, _ []string) { m.main() }
 	return &cobra.Command{Use: "migrate", Run: run}
 }
 
-func (m *Migrate) main() {
-	// defining the migration files
-	// source := "./internal/database/migrate/migrate.sql"
-
+func (m Migrate) main() {
 	// reading query
 	data, err := os.ReadFile(m.Source)
 	if err != nil {
