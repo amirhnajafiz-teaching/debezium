@@ -1,14 +1,24 @@
 {
-  "name": "users connector",
+  "name": "user-events",
   "config": {
-    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
-    "plugin.name": "pgoutput",
-    "database.hostname": "postgres",
+    "tasks.max": "1",
+    "connector.class": "io.debezium.connector.postgresql.MySqlConnector",
+    "database.server.name": "kafka",
+    "database.hostname": "postgresql",
     "database.port": "5432",
     "database.user": "postgres",
     "database.password": "super-secret-password",
-    "database.dbname": "debezium",
-    "database.server.name": "postgres",
-    "table.include.list": "debezium.users"
+    "database.server.id": "5882",
+    "schema.history.internal.kafka.bootstrap.servers": "kafka:9092",
+    "schema.history.internal.kafka.topic": "_history",
+    "database.include.list": "debezium",
+    "table.include.list": "debezium.users",
+    "include.schema.changes": "true",
+    "max.batch.size": "20480",
+    "max.queue.size": "81920",
+    "poll.interval.ms": "10000",
+    "offset.flush.timeout.ms": "60000",
+    "offset.flush.interval.ms": "10000",
+    "max.request.size": "10485760"
   }
 }
