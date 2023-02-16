@@ -9,8 +9,8 @@ import (
 
 func main() {
 	var (
-		KafkaURL       = flag.String("url", "", "kafka cluster address")
-		KafkaTopic     = flag.String("topic", "", "kafka topic")
+		KafkaURL       = flag.String("url", "kafka:9092", "kafka cluster address")
+		KafkaTopic     = flag.String("topic", "kafka.debezium.users", "kafka topic")
 		KafkaPartition = flag.Int("partition", 0, "kafka partition")
 	)
 
