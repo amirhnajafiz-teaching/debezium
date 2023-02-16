@@ -131,3 +131,6 @@ kafka cluster is working. (```connector```)
 <br />
 
 ## Resources
+
+- [https://debezium.io](https://debezium.io/)
+- [https://kafka.ap.og](https://kafka.apache.org/)
