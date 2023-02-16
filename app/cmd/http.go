@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"database/sql"
+
 	"github.com/amirhnajafiz/debezium/app/internal/database"
 	"github.com/amirhnajafiz/debezium/app/internal/port/http"
 
@@ -8,7 +10,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-type HTTP struct{}
+type HTTP struct {
+	Connection *sql.Conn
+}
 
 func (h *HTTP) Command() *cobra.Command {
 	run := func(_ *cobra.Command, _ []string) { h.main() }

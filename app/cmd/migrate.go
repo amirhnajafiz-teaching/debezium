@@ -1,12 +1,16 @@
 package cmd
 
 import (
-	"github.com/amirhnajafiz/debezium/app/internal/database"
-	"github.com/spf13/cobra"
+	"database/sql"
 	"os"
+
+	"github.com/amirhnajafiz/debezium/app/internal/database"
+
+	"github.com/spf13/cobra"
 )
 
 type Migrate struct {
+	Connection *sql.DB
 }
 
 func (m *Migrate) Command() *cobra.Command {
