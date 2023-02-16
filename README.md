@@ -98,3 +98,36 @@ Now you can check the connector by the following http request:
 ```shell
 curl -H "Accept:application/json" localhost:8083/connectors/
 ```
+
+<br />
+
+## Example
+
+Use the command ```docker compose up -d``` to bring up a 
+full example of kafka, postgresQL, debezium, kafka consumer, and
+http server for making updates on postgresQL.
+
+- ```localhost:7490``` http service
+- ```localhost:8083``` debezium cluster
+- ```localhost:9092``` kafka cluster
+
+### Requests to http service
+
+#### Get all
+
+```shell
+curl -X GET -H "Accept:application/json" localhost:7490/api
+```
+
+#### Insert
+
+```shell
+curl -X POST -H "Content-Type:application/json" -d '{"name": "amir", "email": "amirhossein.najafizade21@gmail.com"}'
+```
+
+You can check the consumer container logs to see if your
+kafka cluster is working. (```connector```)
+
+<br />
+
+## Resources
