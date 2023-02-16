@@ -1,6 +1,6 @@
 module github.com/amirhnajafiz/debezium/app
 
-go 1.19
+go 1.20
 
 require (
 	github.com/gofiber/fiber/v2 v2.39.0

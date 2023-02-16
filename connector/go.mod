@@ -1,6 +1,6 @@
 module github.com/amirhnajafiz/debezium/connector
 
-go 1.19
+go 1.20
 
 require (
 	github.com/klauspost/compress v1.15.9 // indirect
