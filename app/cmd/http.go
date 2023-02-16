@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"database/sql"
+	"fmt"
 
-	"github.com/amirhnajafiz/debezium/app/internal/database"
 	"github.com/amirhnajafiz/debezium/app/internal/port/http"
 
 	"github.com/gofiber/fiber/v2"
@@ -11,7 +11,8 @@ import (
 )
 
 type HTTP struct {
-	Connection *sql.Conn
+	Connection *sql.DB
+	Port       int
 }
 
 func (h *HTTP) Command() *cobra.Command {
@@ -20,15 +21,9 @@ func (h *HTTP) Command() *cobra.Command {
 }
 
 func (h *HTTP) main() {
-	// opening connection to postgresQL
-	conn, err := database.NewConnection()
-	if err != nil {
-		panic(err)
-	}
-
 	// creating a new handler
 	hd := http.Handler{
-		Connection: conn,
+		Connection: h.Connection,
 	}
 
 	// creating a new fiber app
@@ -39,7 +34,7 @@ func (h *HTTP) main() {
 	app.Post("/api", hd.HandlePostRequests)
 
 	// running app
-	if err := app.Listen(":7490"); err != nil {
+	if err := app.Listen(fmt.Sprintf(":%d", h.Port)); err != nil {
 		panic(err)
 	}
 }
